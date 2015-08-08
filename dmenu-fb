@@ -1,0 +1,12 @@
+#!/bin/sh
+
+selection="$1"
+
+while [ -d "$selection" ]; do
+       cd "$selection"; selection=$( (echo ".."; find -L -maxdepth 1 -executable | grep -v "^.$") | dmenu -l 20)
+done
+
+if [ -x "$selection" ]; then
+       "${SHELL:-/bin/sh}" -c "$selection" &
+fi
+
