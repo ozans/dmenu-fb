@@ -11,8 +11,21 @@ $ ./dmenu-fb <initialFolder>
 
 Examples
 --------
+Use-case: profile switching
 ```
 $ ./dmenu-fb ~/bin/iptables
+```
+Use-case: file browser
+```
+$ ./dmenu-fb ~/bin
+```
+
+
+Integration with sudo?
+-----------------------
+Use it in conjunction with dpass.
+```
+$ SUDO_ASKPASS=~/bin/dpass sudo -A ./dmenu-fb ~/bin/iptables
 ```
 
 Contributing
